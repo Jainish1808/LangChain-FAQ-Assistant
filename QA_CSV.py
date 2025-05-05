@@ -19,7 +19,7 @@ embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 vectordb_file_path = "faiss_index"
 
 def create_vector_db():
-    loader = CSVLoader(file_path='codebasics_faqs.csv', source_column="prompt")
+    loader = CSVLoader(file_path='FAQ.csv', source_column="prompt")
     data = loader.load()
 
     vectordb = FAISS.from_documents(documents=data,
